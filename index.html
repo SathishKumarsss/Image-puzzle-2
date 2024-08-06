@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+  <div class="title">
+  <h1>Puzzle Image</h1>
+  <h1>Original Image</h1>
+</div>
+<div class="reset">
+  <button onclick="reset()">Reset</button>
+  <button onclick="suffle()" id="suffle">Suffle</button>
+</div>
+<div class="main">
+    <div class="container">
+<img id="img1"  src="animal1.jpg" alt=""  onclick="swap1()">
+<img id="img2"  src="animal2.jpg" alt=""  onclick="swap2()">
+<img id="img3"  src="animal3.jpg" alt=""  onclick="swap3()">
+<img id="img4"  src="animal4.jpg" alt=""  onclick="swap4()">
+<img id="img5"  src="animal5.jpg" alt=""  onclick="swap5()">
+<img id="img6"  src="animal6.jpg" alt=""  onclick="swap6()">
+<img id="img7"  src="animal7.jpg" alt=""  onclick="swap7()">
+<img id="img8"  src="animal8.jpg" alt=""  onclick="swap8()">
+<img id="img9"  src="blank.jpg"   alt=""  onclick="swap9()">
+<img id="img10" src="animal9.jpg" alt=""  onclick="swap10()">
+</div>
+
+  <div class="original-img">
+    <img src="animal.jpg" alt="">
+  </div>
+</div>
+
+ <!-- Modal -->
+ <div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="xwin"></p> <!-- Added an ID for easier targeting -->
+  </div>
+</div>
+
+<script>
+
+function swap1(){
+    if(document.getElementById('img2').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img1').src;
+            document.getElementById('img1').src=document.getElementById('img2').src;
+            document.getElementById('img2').src=temp;
+        
+     }  
+     if(document.getElementById('img4').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img1').src;
+            document.getElementById('img1').src=document.getElementById('img4').src;
+            document.getElementById('img4').src=temp;
+        
+     }   
+     checkwin()
+}
+
+function swap2(){
+    if(document.getElementById('img3').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img2').src;
+            document.getElementById('img2').src=document.getElementById('img3').src;
+            document.getElementById('img3').src=temp;
+        
+     }   
+     if(document.getElementById('img1').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img2').src;
+            document.getElementById('img2').src=document.getElementById('img1').src;
+            document.getElementById('img1').src=temp;
+        
+     }  
+     if(document.getElementById('img5').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img2').src;
+            document.getElementById('img2').src=document.getElementById('img5').src;
+            document.getElementById('img5').src=temp;
+        
+     }    
+     checkwin()
+}
+
+function swap3(){
+    if(document.getElementById('img6').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img3').src;
+            document.getElementById('img3').src=document.getElementById('img6').src;
+            document.getElementById('img6').src=temp;
+        
+     } 
+     if(document.getElementById('img2').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img3').src;
+            document.getElementById('img3').src=document.getElementById('img2').src;
+            document.getElementById('img2').src=temp;
+        
+     }   
+      
+     checkwin()
+}
+
+
+
+
+function swap4(){
+    if(document.getElementById('img7').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img4').src;
+            document.getElementById('img4').src=document.getElementById('img7').src;
+            document.getElementById('img7').src=temp;
+        
+     }   
+     if(document.getElementById('img5').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img4').src;
+            document.getElementById('img4').src=document.getElementById('img5').src;
+            document.getElementById('img5').src=temp;
+        
+     }   
+     if(document.getElementById('img1').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img4').src;
+            document.getElementById('img4').src=document.getElementById('img1').src;
+            document.getElementById('img1').src=temp;
+        
+     }   
+     checkwin()
+}
+
+function swap5(){
+    if(document.getElementById('img8').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img5').src;
+            document.getElementById('img5').src=document.getElementById('img8').src;
+            document.getElementById('img8').src=temp;
+        
+     }   
+     if(document.getElementById('img4').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img5').src;
+            document.getElementById('img5').src=document.getElementById('img4').src;
+            document.getElementById('img4').src=temp;
+        
+     }
+     if(document.getElementById('img6').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img5').src;
+            document.getElementById('img5').src=document.getElementById('img6').src;
+            document.getElementById('img6').src=temp;
+        
+     }  
+     if(document.getElementById('img2').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img5').src;
+            document.getElementById('img5').src=document.getElementById('img2').src;
+            document.getElementById('img2').src=temp;
+        
+     }  
+     checkwin()
+}
+
+
+function swap6(){
+    if(document.getElementById('img9').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img6').src;
+            document.getElementById('img6').src=document.getElementById('img9').src;
+            document.getElementById('img9').src=temp;
+        
+     }  
+     if(document.getElementById('img5').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img6').src;
+            document.getElementById('img6').src=document.getElementById('img5').src;
+            document.getElementById('img5').src=temp;
+        
+     } 
+     if(document.getElementById('img3').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img6').src;
+            document.getElementById('img6').src=document.getElementById('img3').src;
+            document.getElementById('img3').src=temp;
+        
+     }   
+     checkwin()
+}
+
+function swap7(){
+    if(document.getElementById('img8').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img7').src;
+            document.getElementById('img7').src=document.getElementById('img8').src;
+            document.getElementById('img8').src=temp;
+        
+     }  
+     
+     if(document.getElementById('img4').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+        let temp=document.getElementById('img7').src;
+            document.getElementById('img7').src=document.getElementById('img4').src;
+            document.getElementById('img4').src=temp;
+        
+     }  
+     checkwin()
+}
+
+
+function swap8(){
+
+
+    if(document.getElementById('img9').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+       
+    
+let temp=document.getElementById('img8').src;
+            document.getElementById('img8').src=document.getElementById('img9').src;
+            document.getElementById('img9').src=temp;
+        
+        
+} 
+if(document.getElementById('img7').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+       
+    
+    let temp=document.getElementById('img8').src;
+                document.getElementById('img8').src=document.getElementById('img7').src;
+                document.getElementById('img7').src=temp;
+            
+            
+    } 
+    if(document.getElementById('img5').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+       
+    
+        let temp=document.getElementById('img8').src;
+                    document.getElementById('img8').src=document.getElementById('img5').src;
+                    document.getElementById('img5').src=temp;
+                
+                
+        }   
+        checkwin()
+}
+
+function swap9(){
+  if(document.getElementById('img8').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+           let temp=document.getElementById('img9').src;
+            document.getElementById('img9').src=document.getElementById('img8').src;
+            document.getElementById('img8').src=temp;
+        
+    } 
+     
+     if(document.getElementById('img6').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg"){
+  
+        let temp=document.getElementById('img9').src;
+        document.getElementById('img9').src=document.getElementById('img6').src;
+        document.getElementById('img6').src=temp;
+    
+     }
+     checkwin();
+     
+}
+
+
+
+function checkwin(){
+    if((document.getElementById('img1').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg")&&
+    (document.getElementById('img2').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal8.jpg")&&
+    (document.getElementById('img3').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal7.jpg")&&
+    (document.getElementById('img4').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal6.jpg")&&
+    (document.getElementById('img5').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal5.jpg")&&
+    (document.getElementById('img6').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal4.jpg")&&
+    (document.getElementById('img7').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal3.jpg")&&
+    (document.getElementById('img8').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal2.jpg")&&
+    (document.getElementById('img9').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal1.jpg")
+){
+    
+ // Set the message dynamically
+ var xwin = document.getElementById("xwin");
+ xwin.innerText = "Puzzle Solved You Win the game!";
+           // Show modal
+ var modal = document.getElementById("myModal");
+ modal.style.display = "block";
+
+ // Close modal when close button is clicked
+ var closeBtn = document.getElementsByClassName("close")[0];
+ closeBtn.onclick = function() {
+   modal.style.display = "none";
+ };
+}
+
+
+if((document.getElementById('img1').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg")&&
+(document.getElementById('img2').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal8.jpg")&&
+(document.getElementById('img3').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal7.jpg")&&
+(document.getElementById('img4').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal6.jpg")&&
+(document.getElementById('img5').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal5.jpg")&&
+(document.getElementById('img6').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal4.jpg")&&
+(document.getElementById('img7').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal3.jpg")&&
+(document.getElementById('img8').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal2.jpg")&&
+(document.getElementById('img9').src=="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal1.jpg")
+){
+    var o=document.getElementById('img10');
+    o.style.display="block";
+
+    let temp=document.getElementById('img1').src;
+    document.getElementById('img1').src=document.getElementById('img10').src;
+    document.getElementById('img10').src=temp;
+
+    var o=document.getElementById('img10');
+    o.style.display="none";
+    
+  
+}
+
+
+
+}
+function reset(){
+    (document.getElementById('img9').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg")&&
+    (document.getElementById('img8').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal8.jpg")&&
+    (document.getElementById('img7').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal7.jpg")&&
+    (document.getElementById('img6').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal6.jpg")&&
+    (document.getElementById('img5').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal5.jpg")&&
+    (document.getElementById('img4').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal4.jpg")&&
+    (document.getElementById('img3').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal3.jpg")&&
+    (document.getElementById('img2').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal2.jpg")&&
+    (document.getElementById('img1').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal1.jpg")
+
+
+
+ // Set the message dynamically
+ var xwin = document.getElementById("xwin");
+ xwin.innerText = "Play Again All the Best";
+           // Show modal
+ var modal = document.getElementById("myModal");
+ modal.style.display = "block";
+
+ // Close modal when close button is clicked
+ var closeBtn = document.getElementsByClassName("close")[0];
+ closeBtn.onclick = function() {
+   modal.style.display = "none";
+ };   
+
+}
+
+
+function suffle(){
+    
+    (document.getElementById('img5').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/blank.jpg")&&
+    (document.getElementById('img8').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal8.jpg")&&
+    (document.getElementById('img1').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal7.jpg")&&
+    (document.getElementById('img4').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal6.jpg")&&
+    (document.getElementById('img9').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal5.jpg")&&
+    (document.getElementById('img7').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal4.jpg")&&
+    (document.getElementById('img3').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal3.jpg")&&
+    (document.getElementById('img2').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal2.jpg")&&
+    (document.getElementById('img6').src="file:///C:/Users/user/Desktop/Task%20folder/JAVASCRIPT%20GAMES%20FILES/Image%20puzzle%20using%20if%20condition/animal1.jpg")
+    
+   
+
+    
+}
+
+
+
+
+</script>
+
+
+<style>
+  body{
+ background-color: aliceblue;
+}
+.title{
+  display: flex;
+  justify-content: space-around;
+}
+.main{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 100vh;
+}
+.container{
+
+  display: grid;
+  grid-template-columns: repeat(3,150px);
+  border: 1px solid black;
+}
+.container img{
+  width: 150px;
+  height: 150px;
+}
+.original-img img{
+  width: 510px;
+  height: auto;
+  border: 1px solid black;
+}
+.title h1{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  
+}
+
+
+#img10{
+  display: none;
+}
+
+ /* Modal styles */
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  text-align: center;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  background-color:purple;
+  padding: 5px 8px 5px 8px;
+  border-radius: 30px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.reset{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.reset button{
+  background-color:rebeccapurple;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+</style>
+</body>
+</html>
